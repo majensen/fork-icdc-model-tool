@@ -10,7 +10,7 @@ do{ my $x = {
                            },
        'conflicts' => {},
        'recommends' => {
-                         'GraphViz' => 0
+                         'GraphViz2' => 0
                        },
        'requires' => {
                        'Clone' => 0,

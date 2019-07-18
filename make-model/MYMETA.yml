@@ -28,7 +28,7 @@ provides:
   ICDC::MakeModel::Schema:
     file: lib/ICDC/MakeModel/Schema.pm
 recommends:
-  GraphViz: '0'
+  GraphViz2: '0'
 requires:
   Clone: '0'
   Hash::Merge: '0.300'

@@ -114,7 +114,7 @@ do{ my $x = [
          'pureperl_only' => 0,
          'quiet' => undef,
          'recommends' => {
-                           'GraphViz' => 0
+                           'GraphViz2' => 0
                          },
          'recurse_into' => [],
          'recursive_test_files' => undef,
