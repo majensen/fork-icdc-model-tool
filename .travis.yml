@@ -12,6 +12,7 @@ before_install:
 - sudo apt-get -y install graphviz
 - sudo apt-get -y install cpanminus
 - sudo apt-get -y install libgraphviz-perl
+- sudo apt-get -y install liblog4perl-perl
 - cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 - cpanm Module::Build
 install:
@@ -32,7 +33,7 @@ deploy:
   skip_cleanup: true
   local_dir: docs/model-desc
   github_token:
-    - secure: "LB9bRS5tc7S7lKdwrMX50U3JEbM2Y1G4gayZsbJgEQ6W4V/ByjikE29+thhEcU0VDZYKQUBxeVQgHAQ/KSvZYK68+JET19mCqOZheM65u4yajRVQfSNKa5ZvlgiAwWjrRFKZFQ/DRuIlwGy0j41W1wvyTFBcZiUyDQQ3wZRG2VHQXue4/fx27IAuAC+UtPhoGla5INgjOa98jwSqtrcr8koHK/IK1DSdps+UppRWb4HW1drkJeyt/qERvt5vpvOdLunKbKJr8JjI1TpQN6OGMZvo1n6MhZb5GNygRmPfpnVzDquN/aSyn/Y6pW7AtQKopmBJqMLsMvnTLd16cjOwpLXw7FnvhG/H/2uFB2t/fmVXbdZ6EVxP9tZ2CJb9hCjo79OCF8+HEuS4b0wpcRwbQ4O84NLnh7mQV5rb8msCLG008+pmyM1TDt0gjqfrAhVmUFXRdmyNNz0PjTg6PpHvLToyHThCENShz/tmwJHxYqojH261o1IfYw78Q2KnRGPpyGbsZtJB2viQHzy6kkn2T/IToh9UY/b1ZRTqJyj4ZIbB0ivy7eQyBxurLpMY8fRuq1N24Ha7WWD41SR3p2ZbnAgmzJcRLn2dXy5MTQs8AA73URGv/az1IKGHZPCYVC6aLW4K9t6+aR1gAwGGZS+KTKxiF/AiBKci5HbfKHwP/Ps="
+    - secure: KfZEw6PnFRWoxyteHcVo4iphWOy8X6GwczIJsBbb6lXJD9P15qjCmHfq00yJeV0QNgAvyiFlEuVwzSTEi+4hQbDPs8rc8LPyu2Ao5CK4EpKNQlv5tW9fLO1J2cmlVckMLpsdSZPmxE3/T1PqLkAc8Mn42lW237Wed7iiGAdfcsEAcnhY4cZ6+g9vTYrjsWp8MbL0glPh7r+YvlP3cBMJGj31xlYYn9d0N27Cq/dy2nJDV1/E3Yevkvk4SEMHKieO1R29CsH2RuGmjCZKSr/jkj4zFJr1/8Spgb+9FCErui6KCz0rWBJ8yawsIMHjp7Bq25jUoIQKCICbk+Qx+bs0GxzHCjVOKGAygUaWRud0V8cPtZ48YaeYAgcTbmuuY4OTFA4qoOCASdCjabcbz80bTI4TL36Nx2yocrTC6HPh9jvGnMLgBn+iayBZD5al7XHVT1sZtsqAwDhWhfDr0F81NZI87MpI0Akwk0kDvP8TjX1YK/H3J0tX+f/5I12t5wlTG0yc82uvrK3kQ3Ll9XkPcPU6piOFfT/6JmoatirUH5DFIjfu0B4nCQLDntuys+ZN5GqpzcNihTPmr4lmt6PCdX3j4sxFeIyoT34f/rjxxq9+U1wWODWengnsgCe/g0KkEpbT02nfIX+41oYojpIapnXjXbkGlQRU5BbE0aB0ln4=
   keep_history: true
   verbose: true
   on:
