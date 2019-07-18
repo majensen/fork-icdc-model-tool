@@ -254,6 +254,7 @@ sub viz {
     return;
   }
   my $graph = GraphViz->new(
+    layout => 'dot',
     edge => {color => 'black'},
     global => {directed => 1,
 	       record_shape => 'Mrecord',},
@@ -275,11 +276,10 @@ sub viz {
     }
   }
   if ($outf) {
-    $graph->run(driver=>'dot', format=>'svg',output_file=>$outf);
+    $graph->as_svg($outf);
   }
   else {
-    $graph->run(format=>'svg');
-    print $graph->dot_output;
+    $graph->as_svg(\*STOUT);
   }
   return;
 }
