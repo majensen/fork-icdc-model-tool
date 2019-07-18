@@ -1,40 +1,39 @@
 env:
   global:
-    - PERL5LIB=/usr/share/perl5
+  - PERL5LIB=/usr/share/perl5
+  - secure: Xdwv9wCqG6sW4DMVYyUEnpXe2dbFK6gBicjgdRZG+n6z1Az4Jjc+4mlmpuv1sqqDgKepTcgRIQayyPqGgcPWGLsHzwuM3bkNuI//dV9/STP7P3y8UJihbCzK4YY60hrZYFnqh37g9iqxq7JKKppg/M8V5FJIedcvUzz+3++IcP89xte8Ez6QsBUe7NynpvoIxiPwuBuebLt/0T0Y6OiEgiOLYPjlSwoqHVZ+0lzKgaO+FA6WLqT7Km+/CLjPC07KeUa5ALqlA2kwslj0bsqcxFA8Y/g08Zknmmp+eAovz9v/AXHF7neLh7uMvaEU441N42EfNSf47QoopYFnq4a0tmYohvW9UG/nRdJ2d+ukUKAhgVPoeu5/6GYsCgbYc4VlPAsKCr95uEv5s7Sc43udzJJ4UtTvZjg35RHtMLQenFUbEUbsg8oO1F5hIgE0Aje90EDd0ZDBnzGOlO8j4mdA22UBV+kus8BpGuCPtM0SK9aWoYiGBn9nAhxasj98gBmEpuVT8mcRr6eqZH1qEtwlD8spddzQBGKG7r36aCcc4H+jWzDG71Foj4ck/PwwP1V5Kf2fctTArmscXI9FV/zmp3U+oDFuTsrOAnY7fR8iK9tYhgwtHTLGXioYAWMK4wyhZ6EKGERYgsZVyounxOZaWKxm1cpR4Zp/KcYIZUzBRU4=
 language: python
 dist: xenial
 python:
-  - '2.7'
+- '2.7'
 branches:
   only:
-    - master
+  - master
 before_install:
-  - sudo apt-get -y install graphviz
-  - sudo apt-get -y install cpanminus
-  - sudo apt-get -y install libgraphviz-perl
-  - cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
-  - cpanm Module::Build
+- sudo apt-get -y install graphviz
+- sudo apt-get -y install cpanminus
+- sudo apt-get -y install libgraphviz-perl
+- cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+- cpanm Module::Build
 install:
-  - pip install -r model-desc/reqs.txt
-  - pushd make-model
-  - perl Build.PL
-  - yes | ./Build installdeps --cpan_client cpanm
-  - ./Build test --verbose
-  - ls -lR .
-  - ./Build install
+- pip install -r model-desc/reqs.txt
+- pushd make-model
+- perl Build.PL
+- yes | ./Build installdeps --cpan_client cpanm
+- "./Build test --verbose"
+- ls -lR .
+- "./Build install"
 script:
-  - popd
-  - pushd model-desc
-  - pytest && cp icdc-model.yml icdc-model-props.yml ../docs/model-desc && model-tool -g ../docs/model-desc/icdc-model.svg ../docs/model-desc/icdc-model.yml ../docs/model-desc/icdc-model-props.yml
-
+- popd
+- pushd model-desc
+- pytest && cp icdc-model.yml icdc-model-props.yml ../docs/model-desc && model-tool
+  -g ../docs/model-desc/icdc-model.svg ../docs/model-desc/icdc-model.yml ../docs/model-desc/icdc-model-props.yml
 deploy:
   provider: pages
   skip_cleanup: true
   local_dir: docs/model-desc
-  github_token:
-    secure: "OUdsh8iNhFxuh7laBeAses18cB2O/Bp9PxrJVcI4jm9bFuhp4zE0AEEyabFXq3YyS4cYAHeR+znsiUPLRNZ3sM6h4FLLzogQDOjeUdirstP4XQ00mQ/BVlyPNAOcbj8bcy+bkO+aKSa0Iyb8IRdcTSKjUI2S3dNeW3UctDEpmNClpYsPbH+64inQt07MF0PV/gBxkBB3bHtRKoSHEkqjaooPoaOtpqKz595T+CTO38NQrK5nFBhUQlcoUCxlna+9PJdt/4uq+7RoayRXw9jegepOwyAkdjMg1kTWSZITyespG1d5PqBGUkihrIKDaKMstnYpY01fc6wrbvtGtG4ne0+fGmOM4IGYOR7joSDi2Z+Nzy69bhu69m1KLLcs1VFzpQBxsMzGW+rEqIak3powGSKGTbXXHTyhugiomTU1FRbq4bwurrSokzd2jH8GbQW7WEwnM3iCH1zEP2zosi2CWFaQcENmGTXjQUXQ0F1cP/Gbwr1KzHB+jYOH60mj4gClSNwb2cznRgltsS3LYHbEcGAW9XkB0IURkwtcemi41MGeW1OG0+0fqEmWaP/GrxOPGXB7vTFXvsQin2ng/knO2XKVGyX+aNUfgUUK9L7VUI3or6fSx8YbhOeEhLDsAj4/KdYd5bSDPn8l1elUAmeGYDE7nwaH9Vu5qGrk/ApwbaA="
+  github_token: "$GITHUB_TOKEN"
   keep_history: true
   verbose: true
   on:
     branch: master
-    
