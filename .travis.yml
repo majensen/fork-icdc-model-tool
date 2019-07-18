@@ -1,7 +1,6 @@
 env:
   global:
   - PERL5LIB=/usr/share/perl5
-  - secure: Xdwv9wCqG6sW4DMVYyUEnpXe2dbFK6gBicjgdRZG+n6z1Az4Jjc+4mlmpuv1sqqDgKepTcgRIQayyPqGgcPWGLsHzwuM3bkNuI//dV9/STP7P3y8UJihbCzK4YY60hrZYFnqh37g9iqxq7JKKppg/M8V5FJIedcvUzz+3++IcP89xte8Ez6QsBUe7NynpvoIxiPwuBuebLt/0T0Y6OiEgiOLYPjlSwoqHVZ+0lzKgaO+FA6WLqT7Km+/CLjPC07KeUa5ALqlA2kwslj0bsqcxFA8Y/g08Zknmmp+eAovz9v/AXHF7neLh7uMvaEU441N42EfNSf47QoopYFnq4a0tmYohvW9UG/nRdJ2d+ukUKAhgVPoeu5/6GYsCgbYc4VlPAsKCr95uEv5s7Sc43udzJJ4UtTvZjg35RHtMLQenFUbEUbsg8oO1F5hIgE0Aje90EDd0ZDBnzGOlO8j4mdA22UBV+kus8BpGuCPtM0SK9aWoYiGBn9nAhxasj98gBmEpuVT8mcRr6eqZH1qEtwlD8spddzQBGKG7r36aCcc4H+jWzDG71Foj4ck/PwwP1V5Kf2fctTArmscXI9FV/zmp3U+oDFuTsrOAnY7fR8iK9tYhgwtHTLGXioYAWMK4wyhZ6EKGERYgsZVyounxOZaWKxm1cpR4Zp/KcYIZUzBRU4=
 language: python
 dist: xenial
 python:
@@ -32,7 +31,8 @@ deploy:
   provider: pages
   skip_cleanup: true
   local_dir: docs/model-desc
-  github_token: $GITHUB_TOKEN
+  github_token:
+    - secure: "LB9bRS5tc7S7lKdwrMX50U3JEbM2Y1G4gayZsbJgEQ6W4V/ByjikE29+thhEcU0VDZYKQUBxeVQgHAQ/KSvZYK68+JET19mCqOZheM65u4yajRVQfSNKa5ZvlgiAwWjrRFKZFQ/DRuIlwGy0j41W1wvyTFBcZiUyDQQ3wZRG2VHQXue4/fx27IAuAC+UtPhoGla5INgjOa98jwSqtrcr8koHK/IK1DSdps+UppRWb4HW1drkJeyt/qERvt5vpvOdLunKbKJr8JjI1TpQN6OGMZvo1n6MhZb5GNygRmPfpnVzDquN/aSyn/Y6pW7AtQKopmBJqMLsMvnTLd16cjOwpLXw7FnvhG/H/2uFB2t/fmVXbdZ6EVxP9tZ2CJb9hCjo79OCF8+HEuS4b0wpcRwbQ4O84NLnh7mQV5rb8msCLG008+pmyM1TDt0gjqfrAhVmUFXRdmyNNz0PjTg6PpHvLToyHThCENShz/tmwJHxYqojH261o1IfYw78Q2KnRGPpyGbsZtJB2viQHzy6kkn2T/IToh9UY/b1ZRTqJyj4ZIbB0ivy7eQyBxurLpMY8fRuq1N24Ha7WWD41SR3p2ZbnAgmzJcRLn2dXy5MTQs8AA73URGv/az1IKGHZPCYVC6aLW4K9t6+aR1gAwGGZS+KTKxiF/AiBKci5HbfKHwP/Ps="
   keep_history: true
   verbose: true
   on:
