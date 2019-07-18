@@ -32,7 +32,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   local_dir: docs/model-desc
-  github_token: "$GITHUB_TOKEN"
+  github_token: $GITHUB_TOKEN
   keep_history: true
   verbose: true
   on:
