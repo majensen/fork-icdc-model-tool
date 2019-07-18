@@ -1,6 +1,0 @@
-do{ my $x = {
-       'cpan_client' => 'cpanm',
-       'install_base' => '/home/travis/perl5',
-       'verbose' => 1
-     };
-$x; }
