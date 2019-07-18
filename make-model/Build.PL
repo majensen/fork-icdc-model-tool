@@ -29,7 +29,7 @@ my $build = Module::Build->new(
     'Hash::Merge' => '0.300',
   },
   recommends => {
-    'GraphViz2' => 0,
+    'GraphViz' => 0,
   }
  );
 $build->create_build_script;

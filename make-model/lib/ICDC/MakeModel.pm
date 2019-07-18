@@ -249,11 +249,11 @@ sub _relns_with_src_node {
 sub viz {
   my $self = shift;
   my ($outf) = @_;
-  unless (eval "require GraphViz2; 1") {
-    ERROR "GraphViz2 package not installed; barfing.";
+  unless (eval "require GraphViz; 1") {
+    ERROR "GraphViz package not installed; barfing.";
     return;
   }
-  my $graph = GraphViz2->new(
+  my $graph = GraphViz->new(
     edge => {color => 'black'},
     global => {directed => 1,
 	       record_shape => 'Mrecord',},
