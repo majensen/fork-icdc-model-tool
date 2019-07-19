@@ -1,4 +1,4 @@
-if: sender !~ /deploy/
+if: commit_message !~ ^Deploy.*
 env:
   global:
   - PERL5LIB=/usr/share/perl5
