@@ -7,7 +7,7 @@ use JSON;
 use IPC::Run qw/run/;
 
 my $dir = (-d 't' ? '.' : '..');
-my @testoutf = qw/try.svg try.json/;
+my @testoutf = qw/try.svg try.json try.txt/;
 my $sampdir = File::Spec->catdir($dir, qw/t samples/);
 my $tool = File::Spec->catfile($dir, 'bin', 'model-tool');
 
@@ -37,7 +37,7 @@ like ($err, qr/FATAL.*requires an arg/s, "Got correct error");
 
 $in = $out = $err = '';
 
-lives_ok { run( [$tool, '-g', File::Spec->catfile($dir,'try.svg'),'-s','-v', @descfiles],
+lives_ok { run( [$tool, '-g', File::Spec->catfile($dir,'try.svg'),'-T','-v', @descfiles],
 		\$in, \$out,\$err) } "-g [file] -s -v (bad option order)" ;
 like ($err, qr/FATAL.*requires an arg/s, "Got correct error");
 
@@ -49,19 +49,11 @@ diag $err if $err;
 ok(( -e File::Spec->catfile($dir,'try.svg')), "svg created");
 
 $in = $out = $err = '';
-lives_ok { run( [$tool, '-j', File::Spec->catfile($dir,'try.json'), @descfiles, '-d',
-		File::Spec->catdir($dir,'schema')],
-		\$in, \$out, \$err ) } "-j";
+lives_ok { run( [$tool, '-T', File::Spec->catfile($dir,'try.txt'), @descfiles],
+		\$in, \$out, \$err ) } "-g";
 diag $err if $err;
-ok(( -e File::Spec->catfile($dir,'try.json')), "json created");
-diag $err if $err;
-open my $j, File::Spec->catfile($dir,'try.json') or die "Can't open try.json: $!";
-{
-  local $/;
-  my $str = <$j>;
-  lives_ok { $j = decode_json $str } "smells like json";
-  ok grep( /^_definitions.yaml$/, keys %$j), "_definitions.yaml present";
-}
+ok(( -e File::Spec->catfile($dir,'try.txt')), "txt created");
+
 
 1;
 
