@@ -29,9 +29,12 @@ script:
   - popd
   - pushd model-desc
   - pytest
+  - cp -aR ../make-model/lib lib
+  - cp -aR ../make-modle/bin bin
   - docker run --rm -it -v "$PWD":/home/user -w /home/user maj1/icdc:model-tool-perl -Ilib bin/model-tool -g update-model.svg icdc-model.yml icdc-model-props.yml
   - cp icdc-model.yml icdc-model-props.yml ../docs/model-desc
   - cp update-model.svg ../docs/model-desc/icdc-model.svg
+  - rm -rf lib bin
   - rm -rf __pycache__
   - rm MDFValidate/*.pyc
 
