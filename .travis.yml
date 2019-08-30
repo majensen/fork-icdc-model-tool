@@ -24,7 +24,7 @@ install:
   # - ls -lR .
   # - "./Build install"
   # - "./Build realclean"
-  - docker run --rm -it -v "$PWD":/home/user -w /home/user maj1/icdc:model-tool-perl -Ilib bin/model-tool
+  # - docker run --rm -it -v "$PWD":/home/user -w /home/user maj1/icdc:model-tool-perl -Ilib bin/model-tool
 script:
   - popd
   - pushd model-desc
