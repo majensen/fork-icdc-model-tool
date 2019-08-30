@@ -35,6 +35,7 @@ script:
   - rm -rf __pycache__
   - rm MDFValidate/*.pyc
 
+  
 deploy:
   provider: pages
   skip_cleanup: true
