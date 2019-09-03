@@ -15,6 +15,7 @@ branches:
     - master
 before_install:
   - docker pull maj1/icdc:model-tool-perl
+  - sudo apt-get install sed
 install:
   - pip install -r model-desc/reqs.txt
   - pushd make-model
@@ -34,7 +35,8 @@ script:
   - cp -aR ../make-model/bin bin
   - docker run --rm -it -v "$PWD":/home/user -w /home/user maj1/icdc:model-tool-perl -Ilib bin/model-tool -g update-model.svg icdc-model.yml icdc-model-props.yml
   - cp icdc-model.yml icdc-model-props.yml ../docs/model-desc
-  - cp update-model.svg ../docs/model-desc/icdc-model.svg
+  - sed -e '/^<svg/p' -e '/^<\?xml/,/^<svg/d' update-model.sv. > ../docs/model-desc/icdc-model.svg
+  # - cp update-model.svg ../docs/model-desc/icdc-model.svg
   - rm -rf lib bin
   - rm -rf __pycache__
   - rm MDFValidate/*.pyc
