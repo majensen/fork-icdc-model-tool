@@ -227,6 +227,6 @@ installed on your system.
 <div id="text">booga</div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="javascript">
+<script type="text/javascript">
   $(function(){ $("#text").text("Hey dude, I added this.") })
 </script>
