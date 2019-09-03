@@ -35,7 +35,7 @@ script:
   - cp -aR ../make-model/bin bin
   - docker run --rm -it -v "$PWD":/home/user -w /home/user maj1/icdc:model-tool-perl -Ilib bin/model-tool -g update-model.svg icdc-model.yml icdc-model-props.yml
   - cp icdc-model.yml icdc-model-props.yml ../docs/model-desc
-  - sed -n -e '/^<svg/p' -e '/^<\?xml/,/^<svg/d' -e 'p' icdc-model.svg > ../docs/model-desc/icdc-model.svg
+  - sed -e '/^<\?xml/,/^<!-- Tit/d' icdc-model.svg > ../docs/model-desc/icdc-model.svg
   - rm -f update-model.svg
   - pushd ../docs
   - cat ./README.md.content > ./README.md
