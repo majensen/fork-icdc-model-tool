@@ -1,7 +1,5 @@
 [Model artifacts](./model-desc)
 
-[*GitHub Page*](https://majensen.github.io/fork-icdc-model-tool/)
-
 # MakeModel and model-tool
 
 ## Overview

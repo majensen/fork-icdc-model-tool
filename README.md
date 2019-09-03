@@ -4,8 +4,9 @@ TEST [![Build Status](https://travis-ci.org/majensen/fork-icdc-model-tool.svg?br
 
 ORG [![Build Status](https://travis-ci.org/CBIIT/icdc-model-tool.svg?branch=master)](https://travis-ci.org/CBIIT/icdc-model-tool)
 
+[*GitHub Page*](https://majensen.github.io/fork-icdc-model-tool/) 
 
-[View model artifacts](./model-desc)
+[View model artifacts](https://majensen.github.io/fork-icdc-model-tool/) 
 
 # MakeModel and model-tool
 
