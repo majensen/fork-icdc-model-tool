@@ -225,3 +225,10 @@ not add Gen3-defined node, properties or links to the model
 `model-tool` can produce an SVG rendering of the input data
 model. This requires that [GraphViz](http://www.graphviz.org/) be
 installed on your system.
+
+<div id="text">booga</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="javascript">
+  $(function(){ $("text").text("Hey dude, I added this.") })
+</script>
