@@ -38,10 +38,10 @@ script:
   - sed -e '/^<svg/p' -e '/^<\?xml/,/^<svg/d' update-model.svg > ../docs/model-desc/icdc-model.svg
   - rm update-model.svg
   - pushd ../docs
-  - cat ./README.md.content > README.md
-  - echo '<div id="graph" style="display: off;">' >> README.md
-  - cat ./model-desc/icdc-model.svg >> README.md
-  - echo '</div>' >> README.md
+  - cat ./README.md.content > ./README.md
+  - echo "<div id='graph' style='display:off;'>" >> ./README.md
+  - cat ./model-desc/icdc-model.svg >> ./README.md
+  - echo "</div>" >> ./README.md
   - popd
   - rm -rf lib bin
   - rm -rf __pycache__
