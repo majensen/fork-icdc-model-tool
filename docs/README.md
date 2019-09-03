@@ -1,3 +1,5 @@
+<div id="model"></div>
+
 [Model artifacts](./model-desc)
 
 # MakeModel and model-tool
@@ -226,7 +228,8 @@ installed on your system.
 
 <div id="text">booga</div>
 
+<link rel='stylesheet' href="assets/style.css">
+<link rel='stylesheet' href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript">
-  $(function(){ $("#text").text("Hey dude, I added this.") })
-</script>
+<script type="text/javascript"  src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+<script type="text/javascript" src="assets/actions.js"></script>
