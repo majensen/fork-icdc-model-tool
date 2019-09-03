@@ -26,6 +26,7 @@ install:
   # - "./Build realclean"
   # - docker run --rm -it -v "$PWD":/home/user -w /home/user maj1/icdc:model-tool-perl -Ilib bin/model-tool
 script:
+  - echo what
   - popd
   - pushd model-desc
   - pytest
@@ -48,5 +49,3 @@ deploy:
   verbose: true
   on:
     branch: master
-
-    
